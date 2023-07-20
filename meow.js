@@ -2,6 +2,7 @@ let startTheShowBtn = document.getElementById('start-btn');
 let catGallerySection = document.getElementById('cat-gallery');
 let heroSection = document.getElementById('hero');
 let darkModeToggle = document.getElementById('dark-mode-toggle');
+let audio = document.getElementById('music');
 
 function handleImageClick(url) {
   window.open(url, '_blank');
@@ -9,10 +10,10 @@ function handleImageClick(url) {
 
 startTheShowBtn.addEventListener('click', () => {
   catGallerySection.style.display = "block";
+  audio.loop = true;
+  audio.play();
   window.location.href = "#cat-gallery";
-  setTimeout(() => {
-    heroSection.style.display = "none";
-  }, 1000);
+  heroSection.style.display = "none";
 });
 
 let images = document.getElementById('images');

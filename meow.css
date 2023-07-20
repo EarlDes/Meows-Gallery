@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f9f9f9;
+  font-family: 'Indie Flower', cursive;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  background-color: #ffffff;
+  height: 3rem;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  transition: 0.3s;
+  z-index: 2;
+}
+
+header h1 {
+  padding-left: 1rem;
+  color: #6c7de8;
+  font-family: 'Indie Flower', cursive;
+}
+
+header h1 b {
+  color: #f3644f;
+}
+
+.hero {
+  padding-top: 3.5rem;
+  height: 100vh;
+  background-color: #f4ffd5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero .container {
+  height: 100vh;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero .container h1 {
+  color: #6c7de8;
+  margin-bottom: 1rem;
+  font-size: 28px;
+  font-family: 'Indie Flower', cursive;
+  margin-top: 12rem;
+}
+
+.hero .container p {
+  color: #f3644f;
+}
+
+.hero .container .button-container {
+  width: 100%;
+  height: 3rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .container .button-container button {
+  outline: none;
+  width: 14rem;
+  height: 2.3rem;
+  border-radius: 7px;
+  border: none;
+  background-color: #f0fff0;
+  box-shadow: 0 1.6px 3.6px 0 rgb(0 0 0 / 13%), 0 0.3px 0.9px 0 rgb(0 0 0 / 11%);
+  font-weight: 500;
+  color: #f3644f;
+  font-family: 'Indie Flower', cursive;
+}
+
+.gallery {
+  height: 100vh;
+  background: #f0fff0;
+  display: none;
+}
+
+.gallery header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  width: 100%;
+  flex-direction: column;
+  padding-top: 5.5rem;
+}
+
+.gallery header h1 {
+  margin-bottom: 1rem;
+  color: #6c7de8;
+  font-family: 'Indie Flower', cursive;
+}
+
+.gallery header h1 b {
+  color: #f3644f;
+}
+
+.gallery header p {
+  color: gray;
+}
+
+.gallery .container {
+  margin-top: 3rem;
+  border-top: 1px solid #ffffff;
+}
+
+.grid {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.grid li {
+  width: 33.3%;
+  background: #000000;
+  float: left;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: fade-in 0.5s ease-in-out forwards;
+}
+
+.grid img {
+  float: left;
+  width: 100%;
+  height: 11rem;
+  position: relative;
+  border: 2px solid #ffffff;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.dark-mode-toggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #6c7de8;
+  border-radius: 25px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle::before {
+  content: "\f186";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 18px;
+  color: #f9f9f9;
+}
+
+.dark-mode-toggle.dark-mode {
+  background-color: #f3644f;
+}
+
+.dark-mode-toggle.dark-mode::before {
+  content: "\f185";
+  color: #f9f9f9;
+}
+body.dark-mode {
+  background-color: #121212;
+}
+
+body.dark-mode header {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode header h1 {
+  color: #c7c7c7;
+}
+
+body.dark-mode .grid li {
+  width: 33.3%;
+  background: #ffffff;
+  float: left;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: fade-in 0.5s ease-in-out forwards;
+}
+
+body.dark-mode .grid img {
+  float: left;
+  width: 100%;
+  height: 11rem;
+  position: relative;
+  border: 2px solid #000000;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+body.dark-mode .gallery .container {
+  margin-top: 3rem;
+  border-top: 1px solid #000000;
+}
+
+body.dark-mode header h1 b {
+  color: #f3644f;
+}
+
+body.dark-mode .hero {
+  background-color: #292929;
+}
+
+body.dark-mode .hero .container h1 {
+  color: #c7c7c7;
+}
+
+#cat-gallery.dark-mode .container p {
+  color: #c7c7c7;
+}
+
+body.dark-mode .gallery {
+  background-color: #292929;
+}
+
+body.dark-mode .gallery header h1 {
+  color: #c7c7c7;
+}
+
+body.dark-mode .gallery header h1 b {
+  color: #f3644f;
+}
+
+body.dark-mode .gallery header p {
+  color: #c7c7c7;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

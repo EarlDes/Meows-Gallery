@@ -34,7 +34,7 @@ function renderImage(url) {
 }
 
 function fetchImages() {
-  for (let i = 0; i < 1; i++) {
+  for (let i = 0; i < 1000; i++) {
     fetch('https://cataas.com/cat?json=true')
       .then(response => response.json())
       .then(data => {
